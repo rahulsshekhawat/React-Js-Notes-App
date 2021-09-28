@@ -1,0 +1,109 @@
+.text_body{
+    text-align: center;
+    margin-top: 15%;
+}
+
+@media only screen and (max-width: 768px) {
+    .card{
+        width: 300px;
+    }
+  }
+body{
+    background-image: url('./Images/background_image7.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+}  
+
+.note-header{
+    text-align: center;
+    color:white;
+}
+.custom-card1{
+    width: 400px;
+    height: 400px;
+    margin-left: 35%;
+}
+.myNotesContainer{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+.note{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.edit, .delete{
+    cursor: pointer;
+    color:black;
+    transition: background-color 0s ease-in 0s;
+}
+
+.edit:hover, .delete:hover{
+    font-size: 20px;
+}
+
+.card-header, .card-footer{
+    border: 0px;
+    background-color: transparent;
+}
+
+.card{
+    background-color: transparent;
+    box-shadow: 5px 5px 5px black;
+    transition: background-color 0s ease-in 0s;
+}
+
+.card:hover{
+    background-color:rgb(217, 236, 248);
+}
+
+.create-note-btn{
+    margin-top:90px;
+    position:fixed;
+
+}
+
+.btn{
+    border-radius: 30px;
+}
+
+
+.col-sm-8{
+    padding:20px;
+    border-radius: 10px;
+}
+
+.col-sm-8:hover{
+    background-color:rgb(217, 236, 248);
+    
+}
+a{
+    text-decoration: none;
+}
+nav .navbar-nav li .a:hover, .active{
+    border-radius: 10px;
+    background-color:gray;
+    padding:22px 15px;
+}
+.edit-note-container{
+    margin-left: 35%;
+}
+
+.logo{
+    margin-left: auto;
+}
+
+ul .nav-item{
+    margin-left: 4em;
+   
+}
+.navbar-form{
+    margin-left: auto;
+}
