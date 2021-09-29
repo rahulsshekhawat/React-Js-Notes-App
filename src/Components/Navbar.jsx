@@ -1,8 +1,8 @@
 import {useState} from "react";
 import { GoHome } from "react-icons/go";
-import { BsCardText, BsInfoSquare } from "react-icons/bs";
-import { MdNoteAdd } from "react-icons/md";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { BsCardText, BsInfoSquare, BsSearch } from "react-icons/bs";
+import { MdNoteAdd,MdClear } from "react-icons/md";
+//import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink, useHistory } from "react-router-dom";
 import "../App.css";
 const Navbar = ({searchNote}) => {
@@ -11,16 +11,16 @@ const Navbar = ({searchNote}) => {
     let render = null;
     const commonNavLink = <>
         <li className="nav-item">
-            <NavLink to="/" title="Home"><GoHome color="white" size="25px"/></NavLink>
+            <NavLink to="/" title="Home"><GoHome color="white" size="1.5rem"/></NavLink>
         </li>
         <li className="nav-item ">
-            <NavLink to="/aboutus" title="About Us" ><BsInfoSquare color="white" size="20px" /></NavLink>
+            <NavLink to="/aboutus" title="About Us" ><BsInfoSquare color="white" size="1.5rem" /></NavLink>
         </li>
         <li className="nav-item">
-            <NavLink to="/createnote" title="Create a new Note"><MdNoteAdd color="white" size="25px" /></NavLink>
+            <NavLink to="/createnote" title="Create a new Note"><MdNoteAdd color="white" size="1.5rem" /></NavLink>
         </li>
         <li className="nav-item">
-            <NavLink to="/mynotes" title=" My Notes"><BsCardText color="white" size="25px" /></NavLink>
+            <NavLink to="/mynotes" title=" My Notes"><BsCardText color="white" size="1.5rem" /></NavLink>
         </li>
     </>;
 
@@ -30,20 +30,16 @@ const Navbar = ({searchNote}) => {
                 {commonNavLink}
             </ul>
             <div className="navbar-form">
-            <form className="d-flex">
-                <input className="form-control me-2" type="search" 
-                placeholder="Search a note" 
+            <input className="search-bar" type="text" placeholder="Seach a note"
                 value={searchBarValue}
-                onChange={e=>updateSearchBarValue(e.target.value)}/>
-                <button className="btn btn-outline-secondary" 
-                type="submit" 
-                onClick={(e)=>{
-                    e.preventDefault();
-                    searchBarValue===""?window.alert("Seach box is empty. Please enter any keyword related to the note."):
-                    searchNote(searchBarValue);
-                    }
-                }>Search</button>
-            </form>
+                onChange={(e)=>{
+                    updateSearchBarValue(e.target.value);
+                    searchNote(e.target.value);
+                }}/>
+            <span className="search-bar-logo mt-2">
+                {searchBarValue===""?<BsSearch color="white" size="1.5rem"/>:<MdClear color="white" size="1.5rem"
+                onClick={e=>updateSearchBarValue("")}/>}
+            </span>
             </div>
         </>;
     }
@@ -57,7 +53,7 @@ const Navbar = ({searchNote}) => {
     return (
         <nav className="navbar navbar-dark bg-dark navbar-expand-sm">
             <div className="navbar-brand">
-                <h3>Alpha Notes</h3>
+                <h3 className="mx-2">Alpha Notes</h3>
             </div>
             {render}
         </nav>

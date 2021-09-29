@@ -5,14 +5,17 @@ import Navbar from "../Components/Navbar";
 import { useState} from "react";
 
 const MyNotesPage = ({ myNotes, getNoteToDelete, getNoteToEdit }) => {
-    //console.log("myNotes:",myNotes);
+
     const [noteToBeSearched,updateNoteToBeSearched]=useState("");
     var notesArray=[];
     const searchNote=(noteIdentifier)=> updateNoteToBeSearched(noteIdentifier);
+    
     noteToBeSearched===""?notesArray=[...myNotes]:(
         notesArray=[...myNotes.filter(note=>{
             if(note.title.toLowerCase().includes(noteToBeSearched)||note.body.toLowerCase().includes(noteToBeSearched))
                 return note;
+            else
+                return;
         })]
     );
     let notes = notesArray.map((note, index) => {

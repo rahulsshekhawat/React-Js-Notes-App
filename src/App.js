@@ -59,17 +59,17 @@ const App = () => {
   return (
     <Router>
       <div>
-        {/* <Navbar/> */}
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/createnote" exact component={() => <CreateNote getNoteDetail={getNoteDetail} />}/>
-          <Route path="/mynotes" exact component={() => <MyNotesPage myNotes={myNotes}
+          <Route path="/createnote"  component={() => <CreateNote getNoteDetail={getNoteDetail} />}/>
+          <Route path="/mynotes"  component={() => <MyNotesPage myNotes={myNotes}
             getNoteToDelete={getNoteToDelete}
             getNoteToEdit={getNoteToEdit}
           />} />
-          <Route path="/mynotes/edit" exact component={() => <EditNote noteToBeEdited={noteToBeEdited} updateNote={updateNote} />} />;
-          <Route path="/aboutus" exact component={AboutUs} />
+          <Route path="/mynotes/edit"  component={() => <EditNote noteToBeEdited={noteToBeEdited} updateNote={updateNote} />} />;
+          <Route path="/aboutus"  component={AboutUs} />
+          <Route path="/" exact component={Home}/>
           <Route component={PageNotFound} />
+          
         </Switch>
       </div>
     </Router>

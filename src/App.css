@@ -87,10 +87,10 @@ body{
 a{
     text-decoration: none;
 }
-nav .navbar-nav li .a:hover, .active{
-    border-radius: 10px;
+.nav-item a:hover, .active{
+    border-radius: 0.5rem;
     background-color:gray;
-    padding:22px 15px;
+    padding:1rem 1rem;
 }
 .edit-note-container{
     margin-left: 35%;
@@ -106,4 +106,12 @@ ul .nav-item{
 }
 .navbar-form{
     margin-left: auto;
+    display:flex;
+    margin-right: 2rem;
+}
+.search-bar{
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.5rem;
+    outline-color: gray;
 }
